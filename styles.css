@@ -49,12 +49,12 @@ body {
 }
 
 .even-roll {
-  transition: transform 2s  ease-out;
-  transition-delay: 1s;
+  transition: transform 1.25s  ease-out;
+  transition-delay: 1.5s;
 }
 .odd-roll {
-  transition: transform 2s ease-out;
-  transition-delay: 1s;
+  transition: transform 1.25s ease-out;
+  transition-delay: 1.5s;
 }
 .die-item {
   background-color: #fefefe;
