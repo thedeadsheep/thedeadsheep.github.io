@@ -1,31 +1,38 @@
+
 async function rollDice() {
-    boolUp = false
 
     const dice = [...document.querySelectorAll(".die-list")];
     var lawc = document.getElementById("dice");
     var bat = document.getElementById("bat")
     var audio = document.getElementById("audioXD")
-    bat.style.transform = " translate(-50%, -50%)"
-    await setTimeout(() => {
-        lawc.style.animation = "lawc 0.5s infinite ease-out"
-        audio.play()
 
-    }, 1000)
-    await setTimeout(() => {
+    if (localStorage.getItem("Rolling") == "false") {
+        await localStorage.setItem("Rolling", true)
+        console.log(localStorage.getItem("Rolling"))
+        bat.style.transform = " translate(-50%, -50%)"
+        await setTimeout(() => {
+            lawc.style.animation = "lawc 0.5s infinite ease-out"
+            audio.play()
 
-        dice.forEach(die => {
-            toggleClasses(die);
-            die.dataset.roll = ngauNhien()
-            console.log(die.dataset)
+        }, 1000)
+        await setTimeout(() => {
 
-        });
-    }, 1000)
-    await setTimeout(() => {
-        audio.pause()
-        bat.style.transform = " translate(-50%, -150%)"
-        lawc.style.animation = ""
-        boolUp = false
-    }, 3000)
+            dice.forEach(die => {
+                toggleClasses(die);
+                die.dataset.roll = ngauNhien()
+
+            });
+        }, 1000)
+        await setTimeout(() => {
+            audio.pause()
+            bat.style.transform = " translate(-50%, -150%)"
+            lawc.style.animation = ""
+            boolUp = false
+        }, 3000)
+        await localStorage.setItem("Rolling", false)
+    }
+
+
 
 }
 function toggleClasses(die) {

@@ -1,6 +1,4 @@
 <head>
-    <script src="socdia.js">
-    </script>
     <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -118,7 +116,7 @@
                 </li>
             </ol>
         </div>
-        <div class="bat" id="bat" onclick="rollDice()">
+        <div class="bat" id="bat">
         </div>
     </div>
     <div class="chuc-nang">
@@ -126,6 +124,27 @@
     </div>
 
     <script src="./app.js"></script>
+    <script type="text/javascript" src="shake.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            //create a new instance of shake.js.
+            var myShakeEvent = new Shake({
+                threshold: 15
+            });
+
+            // start listening to device motion
+            myShakeEvent.start();
+
+            // register a shake event
+            window.addEventListener('shake', shakeEventDidOccur, false);
+
+            //shake event callback
+            function shakeEventDidOccur() {
+                rollDice()
+            }
+        };
+    </script>
     <audio id="audioXD">
         <source src="./assets/dice.mp3" type="audio/mpeg">
     </audio>
