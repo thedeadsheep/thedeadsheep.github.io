@@ -16,7 +16,7 @@ function showPosition(position) {
     GETWeaterApi(pos)
 }
 async function GETWeaterApi(pos) {
-    var url = `http://api.weatherapi.com/v1/current.json?key=61ac6c912d0c469aa4755351231402 &q=${pos.latitude}, ${pos.longitude}&aqi=yes&lang=vi`
+    var url = `https://api.weatherapi.com/v1/current.json?key=61ac6c912d0c469aa4755351231402 &q=${pos.latitude}, ${pos.longitude}&aqi=yes&lang=vi`
 
     const response = await fetch(url).then(function (response) {
         return response.json();
