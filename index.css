@@ -1,0 +1,135 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+    transition: 1s ease-in-out;
+    margin: 0;
+}
+.left-container{
+    width: 75px;
+    transition: ease-out 0.5s ;
+}
+.right-container{
+    width: 100%;
+    padding: 15px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+.side-nav .item:first-child{
+    height: 200px;
+}
+.side-nav{
+    background-color: #FFF550;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.left-container:hover{
+    width: 175px;
+    transition: ease-in 0.5s ;
+}
+.side-nav .item{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1C1C1C;
+    font-size: 20px;
+}
+.program-list{
+    display: flex;
+    flex-wrap: wrap;
+    height: 2000px;
+    
+}
+
+/*
+    This is scroll for right-container
+*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #dbd445; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1C1C1C; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #050d4d; 
+}
+.floating-weather{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 7px;
+    top: 7px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.57);
+        
+    transition: ease-in 0.5s;
+    padding: 10px
+}
+.floating-weather:hover{
+    background: #FFB920;
+     border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(190, 190, 190, 0.562);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.57);
+    transition: ease-out 0.5s;
+}
+.location{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+}
+.l-name{
+    font-size: 35px;
+}
+.weather-icon{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.weather-today{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+}
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    white-space: 5px;
+}
+.weather-info > *{
+    margin-top: 3px
+}
+.credit{
+    display: flex;
+    flex-direction: row-reverse;
+    color: gray;
+    word-spacing:5%;
+    font-size: 7pt;
+}
