@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<body>
+
+    <div id="wrap01" onclick="clickHandler(event)">
+        <div id="wrap02" onclick="clickHandler(event)">
+            <div id="wrap03" onclick="clickHandler(event)">
+                <div id="wrap04" onclick="clickHandler(event)">
+                    in or out
+                </div>
+            </div>
+        </div>
+    </div>
+    <p style="color: black;" id="result">
+        as
+    </p>
+</body>
+<script>
+    function clickHandler(event) {
+        console.log(event.target)
+        var paragraph = document.getElementById('result')
+        paragraph.innerHTML = event.target.id
+    }
+</script>
+
+
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: yellow;
+    }
+
+    #wrap01 {
+        height: 400px;
+        width: 400px;
+        background-color: red;
+    }
+
+    #wrap02 {
+        height: 300px;
+        width: 300px;
+        background-color: blue;
+    }
+
+    #wrap03 {
+        height: 200px;
+        width: 200px;
+        background-color: green;
+    }
+
+    #wrap04 {
+        height: 100px;
+        width: 100px;
+        background-color: black;
+    }
+</style>

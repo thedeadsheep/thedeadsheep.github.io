@@ -41,7 +41,7 @@ function isValueValid(value) {
 }
 function noteTemplate(textNote) {
 
-    return `<div class= "note-item" id="${textNote.id}" onclick = "forcusNote(event)">
+    return `<div class= "note-item" id="${textNote.id}" onclick = "forcusNote(event)" ondblclick = "itDone(event)">
     
                 <div class="note-content" >
                   ${textNote.value}
@@ -49,6 +49,24 @@ function noteTemplate(textNote) {
                  <button class="del-btn" onclick="deleteNode(event)">x</button>
            
             </div>`
+}
+
+function itDone(event) {
+
+    var element = event.target
+    var id = element.parentElement.id
+    if (element.classList.contains("note-item")) {
+        id = element.id
+    }
+    console.log(event.target)
+    var index = toDoList.findIndex((element) => {
+        console.log(element.id)
+        console.log(id)
+        return element.id === id
+    })
+    console.log(index)
+    toDoList[index].isDone = !toDoList[index].isDone
+    console.log(toDoList)
 }
 
 function deleteNode(event) {

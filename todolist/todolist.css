@@ -1,3 +1,16 @@
 .forcus-note{
     background-color: red;
 }
+.abcdef{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    margin: 50px;
+}
+.abcdef:hover{
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px 0 5px black
+}
